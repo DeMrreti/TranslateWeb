@@ -1,5 +1,7 @@
 async function request() {
     const input = document.querySelector("#input").value
+    const first = document.querySelector("#first").value
+    const second = document.querySelector("#second").value
 
     const url = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
     const options = {
@@ -11,8 +13,8 @@ async function request() {
     		'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
     	},
     	body: new URLSearchParams({
-    		source: 'en',
-    		target: 'es',
+    		source: first,
+    		target: second,
     		q: input
     	})
     };
@@ -21,7 +23,7 @@ async function request() {
     	const response = await fetch(url, options);
     	const result = await response.text();
         const resultadoConvertido = JSON.parse(result)
-    	console.log(resultadoConvertido.data.translations[0].translatedText);
+    	console.log(resultadoConvertido);
         document.getElementById("result").innerHTML = resultadoConvertido.data.translations[0].translatedText
     } catch (error) {
     	console.error(error);

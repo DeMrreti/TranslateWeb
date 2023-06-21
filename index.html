@@ -12,7 +12,17 @@
             <textarea name="input" id="input" cols="30" rows="10"></textarea>
         </div>
         <div class="box-buttons">
+            <select name="select" id="first">
+                <option value="es">Español</option>
+                <option value="en" selected>Ingles</option>
+                <option value="de">Aleman</option>
+            </select>
             <button onclick="request()">Traducir</button>
+            <select name="select" id="second">
+                <option value="es" selected>Español</option>
+                <option value="en">Ingles</option>
+                <option value="de">Aleman</option>
+            </select>
         </div>
         <div class="box-result">
             <textarea name="result" id="result" cols="30" rows="10" readonly="readonly"></textarea>
